@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,8 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <title>A Little Birthday Surprise For You Shingkaloy</title>
 
@@ -16,6 +18,10 @@
             box-sizing: border-box;
         }
 
+
+        /* =====================================
+           BODY
+        ===================================== */
 
         body {
 
@@ -28,6 +34,8 @@
             justify-content: center;
 
             align-items: center;
+
+            padding: 20px;
 
             font-family: "Trebuchet MS", sans-serif;
 
@@ -48,7 +56,7 @@
 
             color: #456579;
 
-            overflow: hidden;
+            overflow: auto;
         }
 
 
@@ -66,6 +74,8 @@
             opacity: 0.65;
 
             pointer-events: none;
+
+            z-index: 0;
         }
 
 
@@ -115,6 +125,10 @@
         ===================================== */
 
         .container {
+
+            position: relative;
+
+            z-index: 1;
 
             width: 90%;
 
@@ -176,6 +190,8 @@
             font-size: 38px;
 
             color: #4e819d;
+
+            line-height: 1.2;
         }
 
 
@@ -187,6 +203,8 @@
             color: #66889b;
 
             margin-bottom: 35px;
+
+            line-height: 1.5;
         }
 
 
@@ -202,6 +220,8 @@
             width: 100%;
 
             height: 210px;
+
+            overflow: hidden;
         }
 
 
@@ -250,6 +270,10 @@
                 left 0.25s ease,
                 top 0.25s ease,
                 transform 0.2s ease;
+
+            white-space: nowrap;
+
+            -webkit-tap-highlight-color: transparent;
         }
 
 
@@ -259,6 +283,13 @@
             transform:
                 translate(-50%, -50%)
                 scale(1.05);
+        }
+
+
+        #birthdayButton:active {
+
+            transform:
+                scale(0.95);
         }
 
 
@@ -287,6 +318,10 @@
 
             min-height: 24px;
 
+            padding: 0 5px;
+
+            line-height: 1.5;
+
             transition:
                 opacity 0.3s ease;
         }
@@ -301,7 +336,7 @@
 
             display: none;
 
-            max-height: 60vh;
+            max-height: 65vh;
 
             overflow-y: auto;
 
@@ -309,6 +344,8 @@
 
             animation:
                 appear 0.8s ease;
+
+            -webkit-overflow-scrolling: touch;
         }
 
 
@@ -342,6 +379,8 @@
             color: #4e819d;
 
             margin-bottom: 20px;
+
+            line-height: 1.3;
         }
 
 
@@ -413,6 +452,8 @@
                 fall 3s linear forwards;
 
             pointer-events: none;
+
+            z-index: 10;
         }
 
 
@@ -443,27 +484,256 @@
 
 
         /* =====================================
-           MOBILE
+           TABLET
         ===================================== */
 
-        @media (max-width: 500px) {
+        @media (max-width: 700px) {
 
-            h1 {
+            body {
 
-                font-size: 30px;
+                padding: 15px;
             }
 
 
             .container {
 
-                padding:
-                    35px 20px;
+                width: 100%;
+
+                max-width: 550px;
+
+                padding: 35px 25px;
+            }
+
+
+            h1 {
+
+                font-size: 34px;
             }
 
 
             #gameArea {
 
                 height: 220px;
+            }
+
+        }
+
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media (max-width: 500px) {
+
+            body {
+
+                padding: 12px;
+
+                align-items: center;
+            }
+
+
+            .container {
+
+                width: 100%;
+
+                padding:
+                    30px 18px;
+
+                border-radius: 25px;
+
+                border-width: 2px;
+            }
+
+
+            .small-text {
+
+                font-size: 11px;
+
+                letter-spacing: 1.3px;
+
+                margin-bottom: 6px;
+            }
+
+
+            h1 {
+
+                font-size: 30px;
+
+                line-height: 1.2;
+
+                margin: 5px 0 8px;
+            }
+
+
+            .subtitle {
+
+                font-size: 15px;
+
+                margin-bottom: 15px;
+
+                line-height: 1.4;
+            }
+
+
+            #gameArea {
+
+                height: 235px;
+
+                width: 100%;
+            }
+
+
+            #birthdayButton {
+
+                padding:
+                    13px 22px;
+
+                font-size: 15px;
+            }
+
+
+            #teasingMessage {
+
+                font-size: 13px;
+
+                line-height: 1.5;
+
+                min-height: 40px;
+            }
+
+
+            #message {
+
+                max-height: 65vh;
+
+                padding-right: 5px;
+            }
+
+
+            #message h2 {
+
+                font-size: 25px;
+
+                line-height: 1.3;
+
+                margin-bottom: 15px;
+            }
+
+
+            #messageText {
+
+                font-size: 15px;
+
+                line-height: 1.7;
+
+                text-align: left;
+            }
+
+
+            .flower {
+
+                font-size: 23px;
+
+                margin: 10px;
+            }
+
+
+            .decoration {
+
+                font-size: 25px;
+
+                opacity: 0.5;
+            }
+
+
+            .deco1 {
+
+                top: 3%;
+
+                left: 3%;
+            }
+
+
+            .deco2 {
+
+                top: 5%;
+
+                right: 3%;
+            }
+
+
+            .deco3 {
+
+                bottom: 4%;
+
+                left: 3%;
+            }
+
+
+            .deco4 {
+
+                bottom: 3%;
+
+                right: 3%;
+            }
+
+        }
+
+
+
+        /* =====================================
+           VERY SMALL PHONES
+        ===================================== */
+
+        @media (max-width: 350px) {
+
+            .container {
+
+                padding:
+                    25px 15px;
+            }
+
+
+            h1 {
+
+                font-size: 27px;
+            }
+
+
+            .subtitle {
+
+                font-size: 14px;
+            }
+
+
+            #gameArea {
+
+                height: 225px;
+            }
+
+
+            #birthdayButton {
+
+                padding:
+                    12px 19px;
+
+                font-size: 14px;
+            }
+
+
+            #message h2 {
+
+                font-size: 23px;
+            }
+
+
+            #messageText {
+
+                font-size: 14px;
+
+                line-height: 1.6;
             }
 
         }
@@ -556,11 +826,6 @@
 
 
 
-                <!--
-                    Messages will appear here
-                    after click 8 and click 9.
-                -->
-
                 <div id="teasingMessage"></div>
 
 
@@ -580,7 +845,7 @@
 
             <div class="flower">
 
-                ☁️  🌼
+                ☁️ 🌼
 
             </div>
 
@@ -596,17 +861,17 @@
 
             <div id="messageText">
 
-                Birthday mo na yana, daraga kana, Shingkay. Sana happy ka kay baga tak napapansin ha imo pirmi ka aringit HAHAHAH. 
+Birthday mo na yana, daraga kana, Shingkay. Sana happy ka kay baga tak napapansin ha imo pirmi ka aringit HAHAHAH.
 
-                Kidding aside, maligayang kaarawan, tak message ha im, always choose to be happy, always choose to be the kind and loving as you are, pero pag sad kana or nasina ka na hin duro, okay la itun. 
-                
-                Embrace those emotions, pero don't let it interfere with your happiness ha?
-                
-                😭 Coming from your tita nga pirmi gihap aringit, pero balitaw, ayaw pagpersonali tak kasina ha kay kapoy la ak hitun. HAHAHA 😭
-                
-                Anyway, you're one of the sweetest ha iyu nga tanan. I wish you good health happiness and success in life. ALways and Forever! 
+Kidding aside, maligayang kaarawan, tak message ha im, always choose to be happy, always choose to be the kind and loving as you are, pero pag sad kana or nasina ka na hin duro, okay la itun.
 
-                Happy Birthday, Shingkaloy!
+Embrace those emotions, pero don't let it interfere with your happiness ha?
+
+😭 Coming from your tita nga pirmi gihap aringit, pero balitaw, ayaw pagpersonali tak kasina ha kay kapoy la ak hitun. HAHAHA 😭
+
+Anyway, you're one of the sweetest ha iyu nga tanan. I wish you good health happiness and success in life. ALways and Forever!
+
+Happy Birthday, Shingkaloy!
 
             </div>
 
@@ -614,7 +879,7 @@
 
             <div class="flower">
 
-                🌱 🩵 ☁️
+                🌱 ☁️
 
             </div>
 
@@ -681,7 +946,6 @@
                 clicks++;
 
 
-
                 /*
                 =================================
                 CLICKS 1–7
@@ -702,7 +966,7 @@
                 =================================
                 CLICK 8
 
-                Button runs away AND
+                Button runs away and
                 teasing message appears.
                 =================================
                 */
@@ -723,7 +987,7 @@
                 =================================
                 CLICK 9
 
-                Button runs away again AND
+                Button runs away and
                 another message appears.
                 =================================
                 */
@@ -774,6 +1038,9 @@
         function moveButton() {
 
 
+            const padding = 10;
+
+
             const areaWidth =
                 gameArea.clientWidth;
 
@@ -791,25 +1058,45 @@
 
 
 
+            /*
+                Calculate the maximum position
+                while keeping the entire button
+                inside the game area.
+            */
+
             const maxX =
                 areaWidth -
-                buttonWidth;
+                buttonWidth -
+                padding;
 
 
             const maxY =
                 areaHeight -
-                buttonHeight;
+                buttonHeight -
+                padding;
 
 
+
+            /*
+                Generate random positions.
+            */
 
             const randomX =
+                padding +
                 Math.random() *
-                maxX;
+                Math.max(
+                    maxX - padding,
+                    0
+                );
 
 
             const randomY =
+                padding +
                 Math.random() *
-                maxY;
+                Math.max(
+                    maxY - padding,
+                    0
+                );
 
 
 
@@ -842,13 +1129,11 @@
 
             const decorations = [
 
-
                 "☁️",
 
                 "🌼",
 
                 "✨",
-
 
                 "🌱"
 
@@ -934,3 +1219,5 @@
 </body>
 
 </html>
+```
+
