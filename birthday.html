@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Birthday Surprise For You Shingkaloy</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-family: "Trebuchet MS", sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    #dcefff 0%,
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 85% 80%,
+                    #c9e5f5 0%,
+                    transparent 28%
+                ),
+
+                #f7f5ed;
+
+            color: #456579;
+
+            overflow: hidden;
+        }
+
+
+
+        /* =====================================
+           CUTE DECORATIONS
+        ===================================== */
+
+        .decoration {
+
+            position: fixed;
+
+            font-size: 34px;
+
+            opacity: 0.65;
+
+            pointer-events: none;
+        }
+
+
+        .deco1 {
+
+            top: 8%;
+
+            left: 8%;
+
+            transform: rotate(-15deg);
+        }
+
+
+        .deco2 {
+
+            top: 13%;
+
+            right: 10%;
+
+            transform: rotate(20deg);
+        }
+
+
+        .deco3 {
+
+            bottom: 10%;
+
+            left: 10%;
+
+            transform: rotate(15deg);
+        }
+
+
+        .deco4 {
+
+            bottom: 8%;
+
+            right: 9%;
+
+            transform: rotate(-20deg);
+        }
+
+
+
+        /* =====================================
+           MAIN CARD
+        ===================================== */
+
+        .container {
+
+            width: 90%;
+
+            max-width: 650px;
+
+            padding: 45px 35px;
+
+            text-align: center;
+
+            background:
+                rgba(
+                    255,
+                    253,
+                    245,
+                    0.96
+                );
+
+            border: 3px solid #b9d9ea;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(
+                    71,
+                    112,
+                    135,
+                    0.15
+                );
+        }
+
+
+
+        /* =====================================
+           SMALL TITLE
+        ===================================== */
+
+        .small-text {
+
+            font-size: 14px;
+
+            letter-spacing: 2px;
+
+            color: #7fa5bb;
+
+            margin-bottom: 8px;
+        }
+
+
+
+        /* =====================================
+           MAIN TITLE
+        ===================================== */
+
+        h1 {
+
+            margin: 5px 0 10px;
+
+            font-size: 38px;
+
+            color: #4e819d;
+        }
+
+
+
+        .subtitle {
+
+            font-size: 17px;
+
+            color: #66889b;
+
+            margin-bottom: 35px;
+        }
+
+
+
+        /* =====================================
+           BUTTON AREA
+        ===================================== */
+
+        #gameArea {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 210px;
+        }
+
+
+
+        /* =====================================
+           RUNAWAY BUTTON
+        ===================================== */
+
+        #birthdayButton {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 45%;
+
+            transform:
+                translate(-50%, -50%);
+
+            padding: 15px 28px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background: #82b5d0;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 7px 16px
+                rgba(
+                    70,
+                    111,
+                    135,
+                    0.2
+                );
+
+            transition:
+                left 0.25s ease,
+                top 0.25s ease,
+                transform 0.2s ease;
+        }
+
+
+
+        #birthdayButton:hover {
+
+            transform:
+                translate(-50%, -50%)
+                scale(1.05);
+        }
+
+
+
+        /* =====================================
+           TEASING MESSAGE
+        ===================================== */
+
+        #teasingMessage {
+
+            position: absolute;
+
+            width: 100%;
+
+            left: 0;
+
+            bottom: 0;
+
+            text-align: center;
+
+            color: #66889b;
+
+            font-size: 15px;
+
+            font-style: italic;
+
+            min-height: 24px;
+
+            transition:
+                opacity 0.3s ease;
+        }
+
+
+
+        /* =====================================
+           BIRTHDAY MESSAGE
+        ===================================== */
+
+        #message {
+
+            display: none;
+
+            max-height: 60vh;
+
+            overflow-y: auto;
+
+            padding-right: 10px;
+
+            animation:
+                appear 0.8s ease;
+        }
+
+
+        /* Cute pastel scrollbar */
+
+        #message::-webkit-scrollbar {
+
+            width: 6px;
+        }
+
+
+        #message::-webkit-scrollbar-thumb {
+
+            background-color: #b9d9ea;
+
+            border-radius: 10px;
+        }
+
+
+        #message::-webkit-scrollbar-track {
+
+            background: transparent;
+        }
+
+
+
+        #message h2 {
+
+            font-size: 32px;
+
+            color: #4e819d;
+
+            margin-bottom: 20px;
+        }
+
+
+
+        #messageText {
+
+            line-height: 1.8;
+
+            font-size: 17px;
+
+            color: #587486;
+
+            white-space: pre-line;
+        }
+
+
+
+        .flower {
+
+            font-size: 28px;
+
+            margin: 15px;
+        }
+
+
+
+        /* =====================================
+           MESSAGE APPEAR ANIMATION
+        ===================================== */
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px)
+                    scale(0.95);
+            }
+
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+
+
+        /* =====================================
+           FALLING CONFETTI
+        ===================================== */
+
+        .confetti {
+
+            position: fixed;
+
+            top: -20px;
+
+            font-size: 20px;
+
+            animation:
+                fall 3s linear forwards;
+
+            pointer-events: none;
+        }
+
+
+
+        @keyframes fall {
+
+            from {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 1;
+            }
+
+
+            to {
+
+                transform:
+                    translateY(110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+
+        }
+
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media (max-width: 500px) {
+
+            h1 {
+
+                font-size: 30px;
+            }
+
+
+            .container {
+
+                padding:
+                    35px 20px;
+            }
+
+
+            #gameArea {
+
+                height: 220px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- =====================================
+         CUTE DECORATIONS
+    ===================================== -->
+
+    <div class="decoration deco1">
+        ☁️
+    </div>
+
+
+    <div class="decoration deco2">
+        🩵
+    </div>
+
+
+    <div class="decoration deco3">
+        🌼
+    </div>
+
+
+    <div class="decoration deco4">
+        ☁️
+    </div>
+
+
+
+    <!-- =====================================
+         MAIN CARD
+    ===================================== -->
+
+    <div class="container">
+
+
+
+        <!-- =================================
+             STARTING SCREEN
+        ================================== -->
+
+        <div id="startScreen">
+
+
+            <div class="small-text">
+
+                A LITTLE SOMETHING FOR YOU
+
+            </div>
+
+
+
+            <h1>
+
+                Happy Birthday!
+
+            </h1>
+
+
+
+            <p class="subtitle">
+
+                There's a little surprise waiting for you...
+
+            </p>
+
+
+
+            <!-- =============================
+                 BUTTON GAME
+            ============================== -->
+
+            <div id="gameArea">
+
+
+                <button id="birthdayButton">
+
+                    Click me! 🐚
+
+                </button>
+
+
+
+                <!--
+                    Messages will appear here
+                    after click 8 and click 9.
+                -->
+
+                <div id="teasingMessage"></div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             FINAL BIRTHDAY MESSAGE
+        ================================== -->
+
+        <div id="message">
+
+
+            <div class="flower">
+
+                ☁️  🌼
+
+            </div>
+
+
+
+            <h2>
+
+                Yayyy Happy Birthday Shingkaloy!
+
+            </h2>
+
+
+
+            <div id="messageText">
+
+                Birthday mo na yana, daraga kana, Shingkay. Sana happy ka kay baga tak napapansin ha imo pirmi ka aringit HAHAHAH. 
+
+                Kidding aside, maligayang kaarawan, tak message ha im, always choose to be happy, always choose to be the kind and loving as you are, pero pag sad kana or nasina ka na hin duro, okay la itun. 
+                
+                Embrace those emotions, pero don't let it interfere with your happiness ha?
+                
+                😭 Coming from your tita nga pirmi gihap aringit, pero balitaw, ayaw pagpersonali tak kasina ha kay kapoy la ak hitun. HAHAHA 😭
+                
+                Anyway, you're one of the sweetest ha iyu nga tanan. I wish you good health happiness and success in life. ALways and Forever! 
+
+                Happy Birthday, Shingkaloy!
+
+            </div>
+
+
+
+            <div class="flower">
+
+                🌱 🩵 ☁️
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ===================================== -->
+
+    <script>
+
+
+        const button =
+            document.getElementById(
+                "birthdayButton"
+            );
+
+
+        const gameArea =
+            document.getElementById(
+                "gameArea"
+            );
+
+
+        const startScreen =
+            document.getElementById(
+                "startScreen"
+            );
+
+
+        const message =
+            document.getElementById(
+                "message"
+            );
+
+
+        const teasingMessage =
+            document.getElementById(
+                "teasingMessage"
+            );
+
+
+
+        let clicks = 0;
+
+
+
+        /* =====================================
+           BUTTON CLICK
+        ===================================== */
+
+        button.addEventListener(
+            "click",
+            function () {
+
+
+                clicks++;
+
+
+
+                /*
+                =================================
+                CLICKS 1–7
+
+                Button simply runs away.
+                =================================
+                */
+
+                if (clicks < 8) {
+
+                    moveButton();
+
+                }
+
+
+
+                /*
+                =================================
+                CLICK 8
+
+                Button runs away AND
+                teasing message appears.
+                =================================
+                */
+
+                else if (clicks === 8) {
+
+                    moveButton();
+
+
+                    teasingMessage.textContent =
+                        "HAHAHA! You really thought it would be that easy? 😭";
+
+                }
+
+
+
+                /*
+                =================================
+                CLICK 9
+
+                Button runs away again AND
+                another message appears.
+                =================================
+                */
+
+                else if (clicks === 9) {
+
+                    moveButton();
+
+
+                    teasingMessage.textContent =
+                        "You're still chasing this thing?! ONE MORE. 😭";
+
+                }
+
+
+
+                /*
+                =================================
+                CLICK 10
+
+                Birthday message appears.
+                =================================
+                */
+
+                else if (clicks === 10) {
+
+                    startScreen.style.display =
+                        "none";
+
+
+                    message.style.display =
+                        "block";
+
+
+                    createConfetti();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================
+           MOVE THE BUTTON
+        ===================================== */
+
+        function moveButton() {
+
+
+            const areaWidth =
+                gameArea.clientWidth;
+
+
+            const areaHeight =
+                gameArea.clientHeight;
+
+
+            const buttonWidth =
+                button.offsetWidth;
+
+
+            const buttonHeight =
+                button.offsetHeight;
+
+
+
+            const maxX =
+                areaWidth -
+                buttonWidth;
+
+
+            const maxY =
+                areaHeight -
+                buttonHeight;
+
+
+
+            const randomX =
+                Math.random() *
+                maxX;
+
+
+            const randomY =
+                Math.random() *
+                maxY;
+
+
+
+            /*
+                Remove the centered
+                translate positioning.
+            */
+
+            button.style.transform =
+                "none";
+
+
+            button.style.left =
+                randomX + "px";
+
+
+            button.style.top =
+                randomY + "px";
+
+        }
+
+
+
+        /* =====================================
+           CONFETTI
+        ===================================== */
+
+        function createConfetti() {
+
+
+            const decorations = [
+
+
+                "☁️",
+
+                "🌼",
+
+                "✨",
+
+
+                "🌱"
+
+            ];
+
+
+
+            for (
+                let i = 0;
+                i < 35;
+                i++
+            ) {
+
+
+                const confetti =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                confetti.classList.add(
+                    "confetti"
+                );
+
+
+                confetti.textContent =
+                    decorations[
+                        Math.floor(
+                            Math.random() *
+                            decorations.length
+                        )
+                    ];
+
+
+
+                confetti.style.left =
+                    Math.random() *
+                    100 +
+                    "vw";
+
+
+
+                confetti.style.animationDelay =
+                    Math.random() *
+                    1.5 +
+                    "s";
+
+
+
+                confetti.style.fontSize =
+                    (
+                        Math.random() *
+                        12 +
+                        15
+                    ) +
+                    "px";
+
+
+
+                document.body.appendChild(
+                    confetti
+                );
+
+
+
+                setTimeout(
+                    function () {
+
+                        confetti.remove();
+
+                    },
+                    4500
+                );
+
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
