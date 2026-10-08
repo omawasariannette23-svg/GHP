@@ -1,188 +1,1223 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ariannette S. Omawas — BSIT Student</title>
 
-  <style>
-    :root {
-      --bg: #1c1917;
-      --card: #292524;
-      --accent: #f97316;
-      --accent-soft: rgba(249, 115, 22, 0.15);
-      --text: #f5f5f4;
-      --muted: #a8a29e;
-    }
+    <meta charset="UTF-8">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      line-height: 1.6;
-    }
+    <title>A Little Birthday Surprise For You Shingkaloy</title>
 
-    .card {
-      background: var(--card);
-      max-width: 540px;
-      width: 100%;
-      border-radius: 20px;
-      padding: 2.5rem;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(168, 162, 158, 0.1);
-    }
 
-    .avatar {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), #fb923c);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #1c1917;
-      margin-bottom: 1.25rem;
-    }
+    <style>
 
-    h1 {
-      font-size: 1.9rem;
-      margin-bottom: 0.25rem;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    .role {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-    }
 
-    .role::before {
-      content: "📍 ";
-    }
+        /* =====================================
+           BODY
+        ===================================== */
 
-    .bio {
-      color: var(--muted);
-      margin-bottom: 1.75rem;
-    }
+        body {
 
-    h2 {
-      font-size: 1.1rem;
-      margin-bottom: 0.9rem;
-    }
+            margin: 0;
 
-    .skills {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
-    }
+            min-height: 100vh;
 
-    .skills li {
-      background: var(--accent-soft);
-      color: var(--accent);
-      padding: 0.45rem 1rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      border: 1px solid rgba(249, 115, 22, 0.25);
-    }
+            display: flex;
 
-    .github-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--accent);
-      color: #1c1917;
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 12px;
-      font-weight: 600;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
+            justify-content: center;
 
-    .github-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
-    }
+            align-items: center;
 
-    .github-btn:focus-visible {
-      outline: 3px solid #fff;
-      outline-offset: 2px;
-    }
-  </style>
+            padding: 20px;
+
+            font-family: "Trebuchet MS", sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    #dcefff 0%,
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 85% 80%,
+                    #c9e5f5 0%,
+                    transparent 28%
+                ),
+
+                #f7f5ed;
+
+            color: #456579;
+
+            overflow: auto;
+        }
+
+
+
+        /* =====================================
+           CUTE DECORATIONS
+        ===================================== */
+
+        .decoration {
+
+            position: fixed;
+
+            font-size: 34px;
+
+            opacity: 0.65;
+
+            pointer-events: none;
+
+            z-index: 0;
+        }
+
+
+        .deco1 {
+
+            top: 8%;
+
+            left: 8%;
+
+            transform: rotate(-15deg);
+        }
+
+
+        .deco2 {
+
+            top: 13%;
+
+            right: 10%;
+
+            transform: rotate(20deg);
+        }
+
+
+        .deco3 {
+
+            bottom: 10%;
+
+            left: 10%;
+
+            transform: rotate(15deg);
+        }
+
+
+        .deco4 {
+
+            bottom: 8%;
+
+            right: 9%;
+
+            transform: rotate(-20deg);
+        }
+
+
+
+        /* =====================================
+           MAIN CARD
+        ===================================== */
+
+        .container {
+
+            position: relative;
+
+            z-index: 1;
+
+            width: 90%;
+
+            max-width: 650px;
+
+            padding: 45px 35px;
+
+            text-align: center;
+
+            background:
+                rgba(
+                    255,
+                    253,
+                    245,
+                    0.96
+                );
+
+            border: 3px solid #b9d9ea;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(
+                    71,
+                    112,
+                    135,
+                    0.15
+                );
+        }
+
+
+
+        /* =====================================
+           SMALL TITLE
+        ===================================== */
+
+        .small-text {
+
+            font-size: 14px;
+
+            letter-spacing: 2px;
+
+            color: #7fa5bb;
+
+            margin-bottom: 8px;
+        }
+
+
+
+        /* =====================================
+           MAIN TITLE
+        ===================================== */
+
+        h1 {
+
+            margin: 5px 0 10px;
+
+            font-size: 38px;
+
+            color: #4e819d;
+
+            line-height: 1.2;
+        }
+
+
+
+        .subtitle {
+
+            font-size: 17px;
+
+            color: #66889b;
+
+            margin-bottom: 35px;
+
+            line-height: 1.5;
+        }
+
+
+
+        /* =====================================
+           BUTTON AREA
+        ===================================== */
+
+        #gameArea {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 210px;
+
+            overflow: hidden;
+        }
+
+
+
+        /* =====================================
+           RUNAWAY BUTTON
+        ===================================== */
+
+        #birthdayButton {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 45%;
+
+            transform:
+                translate(-50%, -50%);
+
+            padding: 15px 28px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background: #82b5d0;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 7px 16px
+                rgba(
+                    70,
+                    111,
+                    135,
+                    0.2
+                );
+
+            transition:
+                left 0.25s ease,
+                top 0.25s ease,
+                transform 0.2s ease;
+
+            white-space: nowrap;
+
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+
+        #birthdayButton:hover {
+
+            transform:
+                translate(-50%, -50%)
+                scale(1.05);
+        }
+
+
+        #birthdayButton:active {
+
+            transform:
+                scale(0.95);
+        }
+
+
+
+        /* =====================================
+           TEASING MESSAGE
+        ===================================== */
+
+        #teasingMessage {
+
+            position: absolute;
+
+            width: 100%;
+
+            left: 0;
+
+            bottom: 0;
+
+            text-align: center;
+
+            color: #66889b;
+
+            font-size: 15px;
+
+            font-style: italic;
+
+            min-height: 24px;
+
+            padding: 0 5px;
+
+            line-height: 1.5;
+
+            transition:
+                opacity 0.3s ease;
+        }
+
+
+
+        /* =====================================
+           BIRTHDAY MESSAGE
+        ===================================== */
+
+        #message {
+
+            display: none;
+
+            max-height: 65vh;
+
+            overflow-y: auto;
+
+            padding-right: 10px;
+
+            animation:
+                appear 0.8s ease;
+
+            -webkit-overflow-scrolling: touch;
+        }
+
+
+        /* Cute pastel scrollbar */
+
+        #message::-webkit-scrollbar {
+
+            width: 6px;
+        }
+
+
+        #message::-webkit-scrollbar-thumb {
+
+            background-color: #b9d9ea;
+
+            border-radius: 10px;
+        }
+
+
+        #message::-webkit-scrollbar-track {
+
+            background: transparent;
+        }
+
+
+
+        #message h2 {
+
+            font-size: 32px;
+
+            color: #4e819d;
+
+            margin-bottom: 20px;
+
+            line-height: 1.3;
+        }
+
+
+
+        #messageText {
+
+            line-height: 1.8;
+
+            font-size: 17px;
+
+            color: #587486;
+
+            white-space: pre-line;
+        }
+
+
+
+        .flower {
+
+            font-size: 28px;
+
+            margin: 15px;
+        }
+
+
+
+        /* =====================================
+           MESSAGE APPEAR ANIMATION
+        ===================================== */
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px)
+                    scale(0.95);
+            }
+
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+
+
+        /* =====================================
+           FALLING CONFETTI
+        ===================================== */
+
+        .confetti {
+
+            position: fixed;
+
+            top: -20px;
+
+            font-size: 20px;
+
+            animation:
+                fall 3s linear forwards;
+
+            pointer-events: none;
+
+            z-index: 10;
+        }
+
+
+
+        @keyframes fall {
+
+            from {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 1;
+            }
+
+
+            to {
+
+                transform:
+                    translateY(110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+
+        }
+
+
+
+        /* =====================================
+           TABLET
+        ===================================== */
+
+        @media (max-width: 700px) {
+
+            body {
+
+                padding: 15px;
+            }
+
+
+            .container {
+
+                width: 100%;
+
+                max-width: 550px;
+
+                padding: 35px 25px;
+            }
+
+
+            h1 {
+
+                font-size: 34px;
+            }
+
+
+            #gameArea {
+
+                height: 220px;
+            }
+
+        }
+
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media (max-width: 500px) {
+
+            body {
+
+                padding: 12px;
+
+                align-items: center;
+            }
+
+
+            .container {
+
+                width: 100%;
+
+                padding:
+                    30px 18px;
+
+                border-radius: 25px;
+
+                border-width: 2px;
+            }
+
+
+            .small-text {
+
+                font-size: 11px;
+
+                letter-spacing: 1.3px;
+
+                margin-bottom: 6px;
+            }
+
+
+            h1 {
+
+                font-size: 30px;
+
+                line-height: 1.2;
+
+                margin: 5px 0 8px;
+            }
+
+
+            .subtitle {
+
+                font-size: 15px;
+
+                margin-bottom: 15px;
+
+                line-height: 1.4;
+            }
+
+
+            #gameArea {
+
+                height: 235px;
+
+                width: 100%;
+            }
+
+
+            #birthdayButton {
+
+                padding:
+                    13px 22px;
+
+                font-size: 15px;
+            }
+
+
+            #teasingMessage {
+
+                font-size: 13px;
+
+                line-height: 1.5;
+
+                min-height: 40px;
+            }
+
+
+            #message {
+
+                max-height: 65vh;
+
+                padding-right: 5px;
+            }
+
+
+            #message h2 {
+
+                font-size: 25px;
+
+                line-height: 1.3;
+
+                margin-bottom: 15px;
+            }
+
+
+            #messageText {
+
+                font-size: 15px;
+
+                line-height: 1.7;
+
+                text-align: left;
+            }
+
+
+            .flower {
+
+                font-size: 23px;
+
+                margin: 10px;
+            }
+
+
+            .decoration {
+
+                font-size: 25px;
+
+                opacity: 0.5;
+            }
+
+
+            .deco1 {
+
+                top: 3%;
+
+                left: 3%;
+            }
+
+
+            .deco2 {
+
+                top: 5%;
+
+                right: 3%;
+            }
+
+
+            .deco3 {
+
+                bottom: 4%;
+
+                left: 3%;
+            }
+
+
+            .deco4 {
+
+                bottom: 3%;
+
+                right: 3%;
+            }
+
+        }
+
+
+
+        /* =====================================
+           VERY SMALL PHONES
+        ===================================== */
+
+        @media (max-width: 350px) {
+
+            .container {
+
+                padding:
+                    25px 15px;
+            }
+
+
+            h1 {
+
+                font-size: 27px;
+            }
+
+
+            .subtitle {
+
+                font-size: 14px;
+            }
+
+
+            #gameArea {
+
+                height: 225px;
+            }
+
+
+            #birthdayButton {
+
+                padding:
+                    12px 19px;
+
+                font-size: 14px;
+            }
+
+
+            #message h2 {
+
+                font-size: 23px;
+            }
+
+
+            #messageText {
+
+                font-size: 14px;
+
+                line-height: 1.6;
+            }
+
+        }
+
+    </style>
+
 </head>
 
+
+
 <body>
-  <main class="card">
 
-    <div class="avatar" aria-hidden="true">AO</div>
 
-    <h1>Ariannette S. Omawas</h1>
+    <!-- =====================================
+         CUTE DECORATIONS
+    ===================================== -->
 
-    <p class="role">BSIT Student · Philippines</p>
+    <div class="decoration deco1">
+        ☁️
+    </div>
 
-    <p class="bio">
-      Hi! I&apos;m a first-year BSIT student from the Philippines beginning my journey
-      into information technology. I&apos;m passionate about learning how websites and
-      software are built, and I&apos;m steadily working toward becoming a skilled
-      developer&mdash;one line of code at a time.
-    </p>
 
-    <h2>Skills I&apos;m Learning</h2>
+    <div class="decoration deco2">
+        🩵
+    </div>
 
-    <ul class="skills">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Git</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-    </ul>
 
-    <a class="github-btn" href="contacts.html">
+    <div class="decoration deco3">
+        🌼
+    </div>
 
-      <svg width="20" height="20" viewBox="0 0 24 24"
-           fill="currentColor" aria-hidden="true">
 
-        <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.13-.31-.54-1.53.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.18.77.84 1.23 1.91 1.23 3.23 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/>
+    <div class="decoration deco4">
+        ☁️
+    </div>
 
-      </svg>
 
-      Contact Me
 
-    </a>
+    <!-- =====================================
+         MAIN CARD
+    ===================================== -->
 
-    <a
-      class="github-btn"
-      href="https://github.com/omawasariannette23-svg"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <div class="container">
 
-      <svg width="20" height="20" viewBox="0 0 24 24"
-           fill="currentColor" aria-hidden="true">
 
-        <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.13-.31-.54-1.53.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.18.77.84 1.23 1.91 1.23 3.23 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/>
 
-      </svg>
+        <!-- =================================
+             STARTING SCREEN
+        ================================== -->
 
-      View My GitHub
+        <div id="startScreen">
 
-    </a>
 
-  </main>
+            <div class="small-text">
+
+                A LITTLE SOMETHING FOR YOU
+
+            </div>
+
+
+
+            <h1>
+
+                Happy Birthday!
+
+            </h1>
+
+
+
+            <p class="subtitle">
+
+                There's a little surprise waiting for you...
+
+            </p>
+
+
+
+            <!-- =============================
+                 BUTTON GAME
+            ============================== -->
+
+            <div id="gameArea">
+
+
+                <button id="birthdayButton">
+
+                    Click me! 🐚
+
+                </button>
+
+
+
+                <div id="teasingMessage"></div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             FINAL BIRTHDAY MESSAGE
+        ================================== -->
+
+        <div id="message">
+
+
+            <div class="flower">
+
+                ☁️ 🌼
+
+            </div>
+
+
+
+            <h2>
+
+                Yayyy Happy Birthday Shingkaloy!
+
+            </h2>
+
+
+
+            <div id="messageText">
+
+Birthday mo na yana, daraga kana, Shingkay. Sana happy ka kay baga tak napapansin ha imo pirmi ka aringit HAHAHAH.
+
+Kidding aside, maligayang kaarawan, tak message ha im, always choose to be happy, always choose to be the kind and loving as you are, pero pag sad kana or nasina ka na hin duro, okay la itun.
+
+Embrace those emotions, pero don't let it interfere with your happiness ha?
+
+😭 Coming from your tita nga pirmi gihap aringit, pero balitaw, ayaw pagpersonali tak kasina ha kay kapoy la ak hitun. HAHAHA 😭
+
+Anyway, you're one of the sweetest ha iyu nga tanan. I wish you good health happiness and success in life. ALways and Forever!
+
+Happy Birthday, Shingkaloy!
+
+            </div>
+
+
+
+            <div class="flower">
+
+                🌱 ☁️
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ===================================== -->
+
+    <script>
+
+
+        const button =
+            document.getElementById(
+                "birthdayButton"
+            );
+
+
+        const gameArea =
+            document.getElementById(
+                "gameArea"
+            );
+
+
+        const startScreen =
+            document.getElementById(
+                "startScreen"
+            );
+
+
+        const message =
+            document.getElementById(
+                "message"
+            );
+
+
+        const teasingMessage =
+            document.getElementById(
+                "teasingMessage"
+            );
+
+
+
+        let clicks = 0;
+
+
+
+        /* =====================================
+           BUTTON CLICK
+        ===================================== */
+
+        button.addEventListener(
+            "click",
+            function () {
+
+
+                clicks++;
+
+
+                /*
+                =================================
+                CLICKS 1–7
+
+                Button simply runs away.
+                =================================
+                */
+
+                if (clicks < 8) {
+
+                    moveButton();
+
+                }
+
+
+
+                /*
+                =================================
+                CLICK 8
+
+                Button runs away and
+                teasing message appears.
+                =================================
+                */
+
+                else if (clicks === 8) {
+
+                    moveButton();
+
+
+                    teasingMessage.textContent =
+                        "HAHAHA! You really thought it would be that easy? 😭";
+
+                }
+
+
+
+                /*
+                =================================
+                CLICK 9
+
+                Button runs away and
+                another message appears.
+                =================================
+                */
+
+                else if (clicks === 9) {
+
+                    moveButton();
+
+
+                    teasingMessage.textContent =
+                        "You're still chasing this thing?! ONE MORE. 😭";
+
+                }
+
+
+
+                /*
+                =================================
+                CLICK 10
+
+                Birthday message appears.
+                =================================
+                */
+
+                else if (clicks === 10) {
+
+                    startScreen.style.display =
+                        "none";
+
+
+                    message.style.display =
+                        "block";
+
+
+                    createConfetti();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================
+           MOVE THE BUTTON
+        ===================================== */
+
+        function moveButton() {
+
+
+            const padding = 10;
+
+
+            const areaWidth =
+                gameArea.clientWidth;
+
+
+            const areaHeight =
+                gameArea.clientHeight;
+
+
+            const buttonWidth =
+                button.offsetWidth;
+
+
+            const buttonHeight =
+                button.offsetHeight;
+
+
+
+            /*
+                Calculate the maximum position
+                while keeping the entire button
+                inside the game area.
+            */
+
+            const maxX =
+                areaWidth -
+                buttonWidth -
+                padding;
+
+
+            const maxY =
+                areaHeight -
+                buttonHeight -
+                padding;
+
+
+
+            /*
+                Generate random positions.
+            */
+
+            const randomX =
+                padding +
+                Math.random() *
+                Math.max(
+                    maxX - padding,
+                    0
+                );
+
+
+            const randomY =
+                padding +
+                Math.random() *
+                Math.max(
+                    maxY - padding,
+                    0
+                );
+
+
+
+            /*
+                Remove the centered
+                translate positioning.
+            */
+
+            button.style.transform =
+                "none";
+
+
+            button.style.left =
+                randomX + "px";
+
+
+            button.style.top =
+                randomY + "px";
+
+        }
+
+
+
+        /* =====================================
+           CONFETTI
+        ===================================== */
+
+        function createConfetti() {
+
+
+            const decorations = [
+
+                "☁️",
+
+                "🌼",
+
+                "✨",
+
+                "🌱"
+
+            ];
+
+
+
+            for (
+                let i = 0;
+                i < 35;
+                i++
+            ) {
+
+
+                const confetti =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                confetti.classList.add(
+                    "confetti"
+                );
+
+
+                confetti.textContent =
+                    decorations[
+                        Math.floor(
+                            Math.random() *
+                            decorations.length
+                        )
+                    ];
+
+
+
+                confetti.style.left =
+                    Math.random() *
+                    100 +
+                    "vw";
+
+
+
+                confetti.style.animationDelay =
+                    Math.random() *
+                    1.5 +
+                    "s";
+
+
+
+                confetti.style.fontSize =
+                    (
+                        Math.random() *
+                        12 +
+                        15
+                    ) +
+                    "px";
+
+
+
+                document.body.appendChild(
+                    confetti
+                );
+
+
+
+                setTimeout(
+                    function () {
+
+                        confetti.remove();
+
+                    },
+                    4500
+                );
+
+            }
+
+        }
+
+
+    </script>
+
+
 </body>
+
 </html>
+```
+
